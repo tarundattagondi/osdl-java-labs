@@ -1,6 +1,6 @@
 # Week 6: Random Access File, Serialization and Deserialization
 
-**Status:** Pending
+**Status:** Completed
 
 ## Objective
 
@@ -12,41 +12,57 @@ To work with `RandomAccessFile` for direct file access and implement object pers
 - Serialization
 - Deserialization
 
+## Sample Programs
+
+| File | Concept |
+|------|---------|
+| `RandomAccessFileDemo.java` | Write int/UTF/double, `seek()` to beginning and to a specific offset, read back |
+| `SerializationDemo.java` | Serialize a `Student` object to file, deserialize and print fields |
+
 ## Lab Exercises
 
-1. Design and implement a Java application to manage hotel room bookings where room records are stored in a file and accessed using `RandomAccessFile`. Each room record should be of fixed length, enabling direct (random) access to any room's booking information without reading the file sequentially.
+### Exercise 1 — Hotel Room Management with RandomAccessFile
+**File:** `Ex1_HotelRoomRandomAccess.java`
 
-   The system must support operations such as adding rooms, viewing room details, and updating booking status by directly navigating to the required record position in the file.
+Design and implement a Java application to manage hotel room bookings where room records are stored in a file and accessed using `RandomAccessFile`. Each room record should be of fixed length, enabling direct (random) access to any room's booking information without reading the file sequentially.
 
-   Each room record must contain:
-   - Room Number (`int`)
-   - Room Type (fixed-length `String`, e.g., 20 characters)
-   - Price per Night (`double`)
-   - Booking Status (`boolean`)
+Each room record must contain:
+- Room Number (`int`)
+- Room Type (fixed-length `String`, 20 characters)
+- Price per Night (`double`)
+- Booking Status (`boolean`)
 
-   Provide an option to:
-   - Add new room records
-   - Display details of a specific room using its room number
-   - Update booking status (book / vacate a room)
+Provides options to:
+- Add new room records
+- Display details of a specific room using its room number
+- Update booking status (book / vacate a room)
 
-   Use the `seek()` method to jump directly to the position of a room record. Ensure data is read and written in the same sequence and format. Close the file after each operation.
+### Exercise 2 — Hotel Room Booking with Serialization
+**File:** `Ex2_HotelRoomSerialization.java`
 
-2. Design and implement a Java application for managing hotel room bookings where room booking details are stored as serialized objects in a file. The application should use serialization to save hotel room booking objects permanently and deserialization to retrieve them when required. This approach should simulate real-world object persistence without using a database.
+Design and implement a Java application for managing hotel room bookings where room booking details are stored as serialized objects in a file. The application uses serialization to save hotel room booking objects permanently and deserialization to retrieve them when required.
 
-   Create a `Room` class that implements `Serializable`. Each room object must store:
-   - Room Number
-   - Room Type
-   - Price per Night
-   - Booking Status
-   - Guest Name
+Creates a `Room` class that implements `Serializable`. Each room object stores:
+- Room Number, Room Type, Price per Night, Booking Status, Guest Name
 
-   Serialize room booking objects and store them in a file. Deserialize objects from the file to:
-   - Display all room details
-   - Search for a room using room number
+Operations demonstrated:
+- Serialize room objects and store in a file
+- Deserialize and display all rooms
+- Search for a room by room number
+- Book and vacate rooms by deserializing, modifying, and re-serializing
 
-   Allow updating booking status by:
-   - Deserializing the objects
-   - Modifying the required room object
-   - Re-serializing the updated objects back to the file
+## How to Run
 
-   Handle file and class-related exceptions properly.
+```bash
+cd week-06-random-access-serialization
+javac src/*.java
+```
+
+```bash
+java -cp src RandomAccessFileDemo
+java -cp src SerializationDemo
+java -cp src Ex1_HotelRoomRandomAccess
+java -cp src Ex2_HotelRoomSerialization
+```
+
+Note: Programs create and delete temporary data files (`data.txt`, `student.dat`, `hotel_rooms.dat`, `rooms.ser`) during execution. No manual cleanup needed.
