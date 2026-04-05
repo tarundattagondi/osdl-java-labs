@@ -13,6 +13,8 @@
                     <MenuItem text="New Booking" onAction="#onNewBooking" accelerator="Shortcut+B"/>
                     <MenuItem text="Refresh" onAction="#onRefresh" accelerator="F5"/>
                     <SeparatorMenuItem/>
+                    <MenuItem fx:id="resetDataMenuItem" text="Reset Data" onAction="#handleResetData"/>
+                    <SeparatorMenuItem/>
                     <MenuItem text="Exit" onAction="#onExit" accelerator="Shortcut+Q"/>
                 </Menu>
                 <Menu text="View">

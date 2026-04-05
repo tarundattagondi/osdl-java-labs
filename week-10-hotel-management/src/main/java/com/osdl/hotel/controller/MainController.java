@@ -1,7 +1,9 @@
 package com.osdl.hotel.controller;
 
+import com.osdl.hotel.dao.DatabaseManager;
 import com.osdl.hotel.service.BookingService;
 import com.osdl.hotel.service.RoomService;
+import com.osdl.hotel.util.AlertHelper;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -65,6 +67,34 @@ public class MainController {
         if (bookingViewController != null) bookingViewController.reloadData();
         if (historyViewController != null) historyViewController.reloadData();
         refreshStatus();
+    }
+
+    @FXML private void handleResetData() {
+        Alert confirm = new Alert(Alert.AlertType.CONFIRMATION,
+                "This will permanently delete all rooms, customers, and bookings, "
+                + "then restore the original sample data. This action cannot be undone.",
+                ButtonType.OK, ButtonType.CANCEL);
+        confirm.setTitle("Reset All Data");
+        confirm.setHeaderText("Reset the application to its initial state?");
+
+        confirm.showAndWait().ifPresent(button -> {
+            if (button != ButtonType.OK) return;
+            try {
+                DatabaseManager.getInstance().resetDatabase();
+
+                if (roomsViewController != null) roomsViewController.reloadData();
+                if (customersViewController != null) customersViewController.reloadData();
+                if (bookingViewController != null) bookingViewController.reloadData();
+                if (historyViewController != null) historyViewController.reloadData();
+                refreshStatus();
+
+                tabPane.getSelectionModel().select(0);
+
+                AlertHelper.info("Reset Complete", "Data has been reset to initial state.");
+            } catch (Exception e) {
+                AlertHelper.error("Reset failed: " + e.getMessage());
+            }
+        });
     }
 
     @FXML private void onExit() {

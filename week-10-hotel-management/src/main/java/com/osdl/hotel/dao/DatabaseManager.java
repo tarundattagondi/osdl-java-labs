@@ -34,6 +34,24 @@ public class DatabaseManager {
         return conn;
     }
 
+    /**
+     * Drops all tables, recreates the schema, and re-seeds the original sample data.
+     * Called from the File > Reset Data menu action.
+     */
+    public void resetDatabase() {
+        System.out.println("[Reset] Starting database reset");
+        try (Connection conn = getConnection()) {
+            conn.createStatement().execute("DROP TABLE IF EXISTS bookings");
+            conn.createStatement().execute("DROP TABLE IF EXISTS customers");
+            conn.createStatement().execute("DROP TABLE IF EXISTS rooms");
+            runSchema(conn);
+            seedData(conn);
+        } catch (SQLException e) {
+            throw new RuntimeException("Failed to reset database", e);
+        }
+        System.out.println("[Reset] Database reset complete");
+    }
+
     private void initializeDatabase() {
         try (Connection conn = getConnection()) {
             runSchema(conn);
@@ -63,7 +81,10 @@ public class DatabaseManager {
         ResultSet rs = conn.createStatement().executeQuery("SELECT COUNT(*) FROM rooms");
         rs.next();
         if (rs.getInt(1) > 0) return;
+        seedData(conn);
+    }
 
+    private void seedData(Connection conn) throws SQLException {
         String[] roomInserts = {
             "INSERT INTO rooms (room_number, type, price_per_night, status) VALUES ('101', 'STANDARD', 2000, 'AVAILABLE')",
             "INSERT INTO rooms (room_number, type, price_per_night, status) VALUES ('102', 'STANDARD', 2000, 'AVAILABLE')",
