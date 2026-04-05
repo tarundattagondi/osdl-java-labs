@@ -15,7 +15,7 @@
 | 07 | [Generics](week-07-generics/) | Completed |
 | 08 | [Collection Framework – List Interface](week-08-collections/) | Completed |
 | 09 | [Basic JavaFX GUI Programming](week-09-javafx-basics/) | Completed |
-| 10 | [Hotel Management Application (Capstone)](week-10-hotel-management/) | Pending |
+| 10 | [Hotel Management Application (Capstone)](week-10-hotel-management/) | Completed |
 
 ## Prerequisites
 
