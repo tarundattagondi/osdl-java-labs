@@ -1,7 +1,9 @@
 module com.osdl.hotel {
     requires javafx.controls;
     requires javafx.fxml;
+    requires javafx.swing;
     requires java.sql;
+    requires java.desktop;
 
     opens com.osdl.hotel to javafx.fxml, javafx.graphics;
     opens com.osdl.hotel.controller to javafx.fxml;
