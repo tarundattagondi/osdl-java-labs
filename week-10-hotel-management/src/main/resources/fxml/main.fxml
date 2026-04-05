@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.osdl.hotel.controller.MainController">
+
+    <top>
+        <VBox>
+            <MenuBar fx:id="menuBar">
+                <Menu text="File">
+                    <MenuItem text="New Booking" onAction="#onNewBooking" accelerator="Shortcut+B"/>
+                    <MenuItem text="Refresh" onAction="#onRefresh" accelerator="F5"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Exit" onAction="#onExit" accelerator="Shortcut+Q"/>
+                </Menu>
+                <Menu text="View">
+                    <MenuItem text="Light Theme" onAction="#onLightTheme"/>
+                    <MenuItem text="Dark Theme" onAction="#onDarkTheme"/>
+                </Menu>
+                <Menu text="Help">
+                    <MenuItem text="About" onAction="#onAbout"/>
+                </Menu>
+            </MenuBar>
+
+            <ToolBar fx:id="toolBar">
+                <Button text="New Room" onAction="#onNewRoom" styleClass="button-primary"/>
+                <Button text="New Customer" onAction="#onNewCustomer" styleClass="button-primary"/>
+                <Button text="New Booking" onAction="#onNewBooking" styleClass="button-primary"/>
+                <Separator/>
+                <Button text="Refresh" onAction="#onRefresh"/>
+            </ToolBar>
+        </VBox>
+    </top>
+
+    <center>
+        <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE">
+            <Tab text="Rooms">
+                <fx:include source="rooms.fxml"/>
+            </Tab>
+            <Tab text="Customers">
+                <fx:include source="customers.fxml"/>
+            </Tab>
+            <Tab text="Bookings">
+                <fx:include source="booking.fxml"/>
+            </Tab>
+            <Tab text="History">
+                <fx:include source="history.fxml"/>
+            </Tab>
+        </TabPane>
+    </center>
+
+    <bottom>
+        <HBox fx:id="statusBar" styleClass="status-bar" spacing="30" alignment="CENTER_LEFT">
+            <padding><Insets top="8" bottom="8" left="15" right="15"/></padding>
+            <Label fx:id="lblTotalRooms" text="Total: 0"/>
+            <Label fx:id="lblAvailable" text="Available: 0"/>
+            <Label fx:id="lblOccupied" text="Occupied: 0"/>
+            <Label fx:id="lblRevenue" text="Revenue Today: Rs. 0"/>
+        </HBox>
+    </bottom>
+</BorderPane>

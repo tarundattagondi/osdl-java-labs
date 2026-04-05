@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml" fx:controller="com.osdl.hotel.controller.HistoryController">
+    <padding><Insets top="15" bottom="15" left="15" right="15"/></padding>
+
+    <Label text="Booking History" styleClass="label-heading"/>
+
+    <TableView fx:id="historyTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colInvoice" text="Invoice No" prefWidth="150"/>
+            <TableColumn fx:id="colRoom" text="Room" prefWidth="80"/>
+            <TableColumn fx:id="colGuest" text="Guest" prefWidth="140"/>
+            <TableColumn fx:id="colCheckIn" text="Check-in" prefWidth="100"/>
+            <TableColumn fx:id="colCheckOut" text="Check-out" prefWidth="100"/>
+            <TableColumn fx:id="colTotal" text="Grand Total" prefWidth="110"/>
+            <TableColumn fx:id="colViewInvoice" text="Invoice" prefWidth="100"/>
+        </columns>
+    </TableView>
+</VBox>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml" fx:controller="com.osdl.hotel.controller.RoomsController">
+    <padding><Insets top="15" bottom="15" left="15" right="15"/></padding>
+
+    <Label text="Room Management" styleClass="label-heading"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <TextField fx:id="txtSearch" promptText="Search rooms..." prefWidth="200"/>
+        <Button text="Add Room" onAction="#onAddRoom" styleClass="button-primary"/>
+    </HBox>
+
+    <TableView fx:id="roomTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colRoomNumber" text="Room No" prefWidth="100"/>
+            <TableColumn fx:id="colType" text="Type" prefWidth="120"/>
+            <TableColumn fx:id="colPrice" text="Price/Night" prefWidth="120"/>
+            <TableColumn fx:id="colStatus" text="Status" prefWidth="120"/>
+            <TableColumn fx:id="colActions" text="Actions" prefWidth="100"/>
+        </columns>
+    </TableView>
+</VBox>

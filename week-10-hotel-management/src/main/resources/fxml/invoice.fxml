@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="8" xmlns:fx="http://javafx.com/fxml" fx:controller="com.osdl.hotel.controller.InvoiceController"
+      prefWidth="450" style="-fx-background-color: white; -fx-padding: 25;">
+
+    <Label text="Grand Palace Hotel" style="-fx-font-size: 22px; -fx-font-weight: bold;" alignment="CENTER" maxWidth="Infinity"/>
+    <Label text="123 Heritage Road, New Delhi - 110001" style="-fx-font-size: 11px; -fx-text-fill: #666;" alignment="CENTER" maxWidth="Infinity"/>
+    <Label text="Phone: +91-11-23456789 | GST: 07AAACG1234A1Z5" style="-fx-font-size: 11px; -fx-text-fill: #666;" alignment="CENTER" maxWidth="Infinity"/>
+
+    <Separator/>
+
+    <HBox spacing="20">
+        <VBox spacing="3">
+            <Label text="Invoice No:" style="-fx-font-weight: bold;"/>
+            <Label fx:id="lblInvoiceNo"/>
+            <Label text="Date:" style="-fx-font-weight: bold;"/>
+            <Label fx:id="lblDate"/>
+        </VBox>
+        <VBox spacing="3">
+            <Label text="Guest:" style="-fx-font-weight: bold;"/>
+            <Label fx:id="lblGuestName"/>
+            <Label text="Phone:" style="-fx-font-weight: bold;"/>
+            <Label fx:id="lblGuestPhone"/>
+        </VBox>
+    </HBox>
+
+    <Separator/>
+
+    <GridPane hgap="15" vgap="5">
+        <Label text="Room:" style="-fx-font-weight: bold;" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <Label fx:id="lblRoomInfo" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Check-in:" style="-fx-font-weight: bold;" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <Label fx:id="lblCheckIn" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Check-out:" style="-fx-font-weight: bold;" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <Label fx:id="lblCheckOut" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <Separator/>
+
+    <GridPane hgap="15" vgap="5">
+        <Label text="Description" style="-fx-font-weight: bold;" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <Label text="Amount" style="-fx-font-weight: bold;" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label fx:id="lblLineItem" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <Label fx:id="lblSubtotal" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="GST (12%)" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <Label fx:id="lblTax" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Service Charge" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <Label fx:id="lblServiceCharge" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Separator GridPane.rowIndex="4" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
+
+        <Label text="Grand Total" style="-fx-font-weight: bold; -fx-font-size: 15px;" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <Label fx:id="lblGrandTotal" style="-fx-font-weight: bold; -fx-font-size: 15px;" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <Separator/>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Print Invoice" onAction="#onPrint" styleClass="button-primary"/>
+        <Button text="Close" onAction="#onClose"/>
+    </HBox>
+</VBox>

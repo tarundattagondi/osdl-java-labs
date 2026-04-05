@@ -1,0 +1,214 @@
+/* ===== Dark Theme — Grand Palace Hotel ===== */
+
+.root {
+    -fx-base-color: #1e1e2e;
+    -fx-accent-color: #89b4fa;
+    -fx-danger-color: #f38ba8;
+    -fx-success-color: #a6e3a1;
+    -fx-font-family: "System";
+    -fx-font-size: 13px;
+    -fx-background-color: #1e1e2e;
+}
+
+/* Menu Bar */
+.menu-bar {
+    -fx-background-color: #11111b;
+}
+.menu-bar .menu-button .label {
+    -fx-text-fill: #cdd6f4;
+}
+.menu-bar .menu-button:hover {
+    -fx-background-color: #313244;
+}
+.context-menu {
+    -fx-background-color: #1e1e2e;
+}
+.menu-item {
+    -fx-background-color: transparent;
+}
+.menu-item .label {
+    -fx-text-fill: #cdd6f4;
+}
+.menu-item:focused {
+    -fx-background-color: #313244;
+}
+
+/* Tool Bar */
+.tool-bar {
+    -fx-background-color: #181825;
+    -fx-padding: 8 15;
+    -fx-spacing: 8;
+}
+
+/* Tab Pane */
+.tab-pane > .tab-header-area > .tab-header-background {
+    -fx-background-color: #181825;
+}
+.tab-pane .tab {
+    -fx-background-color: #313244;
+    -fx-background-radius: 5 5 0 0;
+}
+.tab-pane .tab:selected {
+    -fx-background-color: #1e1e2e;
+}
+.tab-pane .tab .tab-label {
+    -fx-text-fill: #cdd6f4;
+    -fx-font-weight: bold;
+}
+.tab-pane > .tab-content-area {
+    -fx-background-color: #1e1e2e;
+}
+
+/* Table View */
+.table-view {
+    -fx-background-color: #1e1e2e;
+    -fx-border-color: #45475a;
+    -fx-border-radius: 4;
+}
+.table-view .column-header {
+    -fx-background-color: #11111b;
+}
+.table-view .column-header .label {
+    -fx-text-fill: #89b4fa;
+    -fx-font-weight: bold;
+}
+.table-row-cell {
+    -fx-background-color: #1e1e2e;
+    -fx-text-fill: #cdd6f4;
+}
+.table-row-cell:odd {
+    -fx-background-color: #181825;
+}
+.table-row-cell:selected {
+    -fx-background-color: #313244;
+}
+.table-view .cell {
+    -fx-text-fill: #cdd6f4;
+}
+.table-view .filler {
+    -fx-background-color: #11111b;
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: #45475a;
+    -fx-text-fill: #cdd6f4;
+    -fx-background-radius: 4;
+    -fx-padding: 6 14;
+    -fx-cursor: hand;
+}
+.button:hover {
+    -fx-background-color: #585b70;
+}
+
+.button-primary {
+    -fx-background-color: #89b4fa;
+    -fx-text-fill: #1e1e2e;
+}
+.button-primary:hover {
+    -fx-background-color: #74c7ec;
+}
+
+.button-destructive {
+    -fx-background-color: #f38ba8;
+    -fx-text-fill: #1e1e2e;
+}
+.button-destructive:hover {
+    -fx-background-color: #eba0ac;
+}
+
+/* Text Fields */
+.text-field {
+    -fx-background-color: #313244;
+    -fx-text-fill: #cdd6f4;
+    -fx-prompt-text-fill: #6c7086;
+    -fx-border-color: #45475a;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-padding: 6;
+}
+.text-field:focused {
+    -fx-border-color: #89b4fa;
+}
+
+/* Labels */
+.label {
+    -fx-text-fill: #cdd6f4;
+}
+.label-heading {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #cdd6f4;
+}
+.label-body {
+    -fx-font-size: 13px;
+    -fx-text-fill: #bac2de;
+}
+
+/* Status indicators */
+.status-available {
+    -fx-text-fill: #a6e3a1;
+    -fx-font-weight: bold;
+}
+.status-occupied {
+    -fx-text-fill: #f38ba8;
+    -fx-font-weight: bold;
+}
+
+/* Status Bar */
+.status-bar {
+    -fx-background-color: #11111b;
+}
+.status-bar .label {
+    -fx-text-fill: #a6adc8;
+    -fx-font-size: 12px;
+}
+
+/* ComboBox */
+.combo-box {
+    -fx-background-color: #313244;
+    -fx-border-color: #45475a;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+.combo-box .list-cell {
+    -fx-text-fill: #cdd6f4;
+    -fx-background-color: #313244;
+}
+.combo-box-popup .list-view {
+    -fx-background-color: #313244;
+}
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: #45475a;
+}
+
+/* DatePicker */
+.date-picker {
+    -fx-background-color: #313244;
+    -fx-border-color: #45475a;
+    -fx-border-radius: 4;
+}
+.date-picker .cell {
+    -fx-text-fill: #cdd6f4;
+}
+
+/* Separator */
+.separator .line {
+    -fx-border-color: #45475a;
+}
+
+/* Dialog */
+.dialog-pane {
+    -fx-background-color: #1e1e2e;
+}
+.dialog-pane .label {
+    -fx-text-fill: #cdd6f4;
+}
+
+/* Scroll Bars */
+.scroll-bar {
+    -fx-background-color: #1e1e2e;
+}
+.scroll-bar .thumb {
+    -fx-background-color: #45475a;
+}

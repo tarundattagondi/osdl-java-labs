@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml" fx:controller="com.osdl.hotel.controller.CustomersController">
+    <padding><Insets top="15" bottom="15" left="15" right="15"/></padding>
+
+    <Label text="Customer Management" styleClass="label-heading"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <TextField fx:id="txtSearch" promptText="Search customers..." prefWidth="200"/>
+        <Button text="Add Customer" onAction="#onAddCustomer" styleClass="button-primary"/>
+    </HBox>
+
+    <TableView fx:id="customerTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="colName" text="Name" prefWidth="160"/>
+            <TableColumn fx:id="colPhone" text="Phone" prefWidth="130"/>
+            <TableColumn fx:id="colEmail" text="Email" prefWidth="180"/>
+            <TableColumn fx:id="colIdProof" text="ID Proof" prefWidth="160"/>
+            <TableColumn fx:id="colActions" text="Actions" prefWidth="80"/>
+        </columns>
+    </TableView>
+</VBox>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml" fx:controller="com.osdl.hotel.controller.BookingController">
+    <padding><Insets top="15" bottom="15" left="15" right="15"/></padding>
+
+    <Label text="New Booking" styleClass="label-heading"/>
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="Room:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="cmbRoom" promptText="Select Room" prefWidth="250" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Customer:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="cmbCustomer" promptText="Select Customer" prefWidth="250" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Check-in:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="dpCheckIn" prefWidth="250" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Check-out:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="dpCheckOut" prefWidth="250" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Service Charge:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtServiceCharge" text="0" prefWidth="250" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        <Separator GridPane.rowIndex="5" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
+
+        <Label text="Subtotal:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+        <Label fx:id="lblSubtotal" text="Rs. 0" styleClass="label-body" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+        <Label text="Tax (12% GST):" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+        <Label fx:id="lblTax" text="Rs. 0" styleClass="label-body" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+        <Label text="Grand Total:" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+        <Label fx:id="lblGrandTotal" text="Rs. 0" style="-fx-font-weight: bold; -fx-font-size: 14px;" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+
+        <Button text="Book Now" onAction="#onBook" styleClass="button-primary" GridPane.rowIndex="9" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <Separator/>
+
+    <Label text="Active Bookings" styleClass="label-heading"/>
+
+    <TableView fx:id="bookingTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="colRoom" text="Room" prefWidth="80"/>
+            <TableColumn fx:id="colGuest" text="Guest" prefWidth="140"/>
+            <TableColumn fx:id="colCheckIn" text="Check-in" prefWidth="100"/>
+            <TableColumn fx:id="colCheckOut" text="Check-out" prefWidth="100"/>
+            <TableColumn fx:id="colTotal" text="Total" prefWidth="100"/>
+            <TableColumn fx:id="colCheckoutAction" text="Action" prefWidth="100"/>
+        </columns>
+    </TableView>
+</VBox>
