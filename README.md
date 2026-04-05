@@ -10,7 +10,7 @@
 | 02 | [Wrapper Classes, Enumeration, Autoboxing](week-02-wrappers-enum/) | Completed |
 | 03 | [Multithreaded Programming – Basics](week-03-threads-basics/) | Completed |
 | 04 | [Multithreaded Programming – Synchronization](week-04-synchronization/) | Completed |
-| 05 | [I/O Streams – Byte & Character Streams](week-05-io-streams/) | Pending |
+| 05 | [I/O Streams – Byte & Character Streams](week-05-io-streams/) | Completed |
 | 06 | [Random Access File, Serialization](week-06-random-access-serialization/) | Pending |
 | 07 | [Generics](week-07-generics/) | Pending |
 | 08 | [Collection Framework – List Interface](week-08-collections/) | Pending |
