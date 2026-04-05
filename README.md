@@ -14,7 +14,7 @@
 | 06 | [Random Access File, Serialization](week-06-random-access-serialization/) | Completed |
 | 07 | [Generics](week-07-generics/) | Completed |
 | 08 | [Collection Framework – List Interface](week-08-collections/) | Completed |
-| 09 | [Basic JavaFX GUI Programming](week-09-javafx-basics/) | Pending |
+| 09 | [Basic JavaFX GUI Programming](week-09-javafx-basics/) | Completed |
 | 10 | [Hotel Management Application (Capstone)](week-10-hotel-management/) | Pending |
 
 ## Prerequisites
