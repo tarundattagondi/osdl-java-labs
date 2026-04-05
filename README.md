@@ -6,7 +6,7 @@
 
 | Week | Topic | Status |
 |------|-------|--------|
-| 01 | [Review of OOP Concepts](week-01-oop/) | Pending |
+| 01 | [Review of OOP Concepts](week-01-oop/) | Completed |
 | 02 | [Wrapper Classes, Enumeration, Autoboxing](week-02-wrappers-enum/) | Pending |
 | 03 | [Multithreaded Programming – Basics](week-03-threads-basics/) | Pending |
 | 04 | [Multithreaded Programming – Synchronization](week-04-synchronization/) | Pending |
