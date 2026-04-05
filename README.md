@@ -9,7 +9,7 @@
 | 01 | [Review of OOP Concepts](week-01-oop/) | Completed |
 | 02 | [Wrapper Classes, Enumeration, Autoboxing](week-02-wrappers-enum/) | Completed |
 | 03 | [Multithreaded Programming – Basics](week-03-threads-basics/) | Completed |
-| 04 | [Multithreaded Programming – Synchronization](week-04-synchronization/) | Pending |
+| 04 | [Multithreaded Programming – Synchronization](week-04-synchronization/) | Completed |
 | 05 | [I/O Streams – Byte & Character Streams](week-05-io-streams/) | Pending |
 | 06 | [Random Access File, Serialization](week-06-random-access-serialization/) | Pending |
 | 07 | [Generics](week-07-generics/) | Pending |
