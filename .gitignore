@@ -1,0 +1,21 @@
+# Java
+*.class
+*.jar
+hs_err_pid*
+
+# Maven
+target/
+
+# VS Code
+.vscode/
+.classpath
+.project
+.settings/
+
+# SQLite
+*.db
+*.db-journal
+
+# OS
+.DS_Store
+Thumbs.db
