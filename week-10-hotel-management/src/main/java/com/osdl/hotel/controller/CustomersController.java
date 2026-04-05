@@ -103,6 +103,11 @@ public class CustomersController {
         });
     }
 
+    /** Reloads customers from the database. Called on tab selection and refresh. */
+    public void reloadData() {
+        refreshTable();
+    }
+
     private void refreshTable() {
         customerTable.setItems(service.getAllCustomers());
     }

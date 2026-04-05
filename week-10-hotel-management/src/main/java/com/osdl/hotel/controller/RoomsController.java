@@ -125,6 +125,11 @@ public class RoomsController {
         });
     }
 
+    /** Reloads rooms from the database. Called on tab selection and refresh. */
+    public void reloadData() {
+        refreshTable();
+    }
+
     private void refreshTable() {
         roomTable.setItems(service.getAllRooms());
     }

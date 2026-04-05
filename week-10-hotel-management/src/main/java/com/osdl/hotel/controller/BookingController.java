@@ -151,6 +151,13 @@ public class BookingController {
         }
     }
 
+    /** Reloads available rooms, customers, and active bookings from the database. */
+    public void reloadData() {
+        cmbRoom.setItems(roomService.getAvailableRooms());
+        cmbCustomer.setItems(customerService.getAllCustomers());
+        refreshTable();
+    }
+
     private double parseServiceCharge() {
         try { return Double.parseDouble(txtServiceCharge.getText().trim()); }
         catch (NumberFormatException e) { return 0; }
