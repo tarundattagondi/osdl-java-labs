@@ -36,17 +36,17 @@
 
     <center>
         <TabPane fx:id="tabPane" tabClosingPolicy="UNAVAILABLE">
-            <Tab text="Rooms">
-                <fx:include source="rooms.fxml"/>
+            <Tab text="Rooms" fx:id="tabRooms">
+                <fx:include fx:id="roomsView" source="rooms.fxml"/>
             </Tab>
-            <Tab text="Customers">
-                <fx:include source="customers.fxml"/>
+            <Tab text="Customers" fx:id="tabCustomers">
+                <fx:include fx:id="customersView" source="customers.fxml"/>
             </Tab>
-            <Tab text="Bookings">
-                <fx:include source="booking.fxml"/>
+            <Tab text="Bookings" fx:id="tabBookings">
+                <fx:include fx:id="bookingView" source="booking.fxml"/>
             </Tab>
-            <Tab text="History">
-                <fx:include source="history.fxml"/>
+            <Tab text="History" fx:id="tabHistory">
+                <fx:include fx:id="historyView" source="history.fxml"/>
             </Tab>
         </TabPane>
     </center>

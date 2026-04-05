@@ -2,12 +2,14 @@ package com.osdl.hotel.controller;
 
 import com.osdl.hotel.service.BookingService;
 import com.osdl.hotel.service.RoomService;
-import com.osdl.hotel.util.AlertHelper;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-/** Controller for main.fxml: menu bar, toolbar, tab pane, status bar. */
+/**
+ * Controller for main.fxml: menu bar, toolbar, tab pane, status bar.
+ * Wires tab selection listeners to reload data in each sub-controller.
+ */
 public class MainController {
 
     @FXML private MenuBar menuBar;
@@ -18,33 +20,50 @@ public class MainController {
     @FXML private Label lblOccupied;
     @FXML private Label lblRevenue;
 
+    // Injected sub-controllers via fx:include fx:id naming convention
+    // fx:id="roomsView" -> controller field "roomsViewController"
+    @FXML private RoomsController roomsViewController;
+    @FXML private CustomersController customersViewController;
+    @FXML private BookingController bookingViewController;
+    @FXML private HistoryController historyViewController;
+
     private final RoomService roomService = new RoomService();
     private final BookingService bookingService = new BookingService();
 
     @FXML
     public void initialize() {
         refreshStatus();
+
+        // Reload data in each tab when it becomes visible
+        tabPane.getSelectionModel().selectedItemProperty().addListener((obs, oldTab, newTab) -> {
+            if (newTab == null) return;
+            switch (newTab.getText()) {
+                case "Rooms"     -> { if (roomsViewController != null) roomsViewController.reloadData(); }
+                case "Customers" -> { if (customersViewController != null) customersViewController.reloadData(); }
+                case "Bookings"  -> { if (bookingViewController != null) bookingViewController.reloadData(); }
+                case "History"   -> { if (historyViewController != null) historyViewController.reloadData(); }
+            }
+            refreshStatus();
+        });
     }
 
     @FXML private void onNewRoom() {
-        tabPane.getSelectionModel().select(0); // Rooms tab
+        tabPane.getSelectionModel().select(0);
     }
 
     @FXML private void onNewCustomer() {
-        tabPane.getSelectionModel().select(1); // Customers tab
+        tabPane.getSelectionModel().select(1);
     }
 
     @FXML private void onNewBooking() {
-        tabPane.getSelectionModel().select(2); // Bookings tab
+        tabPane.getSelectionModel().select(2);
     }
 
     @FXML private void onRefresh() {
-        refreshStatus();
-        // Each tab controller refreshes its own data via initialize
-        // Re-select current tab to trigger re-init workaround
-        int current = tabPane.getSelectionModel().getSelectedIndex();
-        tabPane.getSelectionModel().select(current == 0 ? 1 : 0);
-        tabPane.getSelectionModel().select(current);
+        if (roomsViewController != null) roomsViewController.reloadData();
+        if (customersViewController != null) customersViewController.reloadData();
+        if (bookingViewController != null) bookingViewController.reloadData();
+        if (historyViewController != null) historyViewController.reloadData();
         refreshStatus();
     }
 

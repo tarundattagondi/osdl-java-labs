@@ -49,7 +49,14 @@ public class HistoryController {
             }
         });
         setupViewColumn();
-        refreshTable();
+        reloadData();
+    }
+
+    /** Reloads completed bookings from the database. Called on tab selection and refresh. */
+    public void reloadData() {
+        var items = bookingService.getCompletedBookings();
+        System.out.println("[HistoryController] Loaded " + items.size() + " completed booking(s)");
+        historyTable.setItems(items);
     }
 
     private void setupViewColumn() {
@@ -92,7 +99,4 @@ public class HistoryController {
         });
     }
 
-    private void refreshTable() {
-        historyTable.setItems(bookingService.getCompletedBookings());
-    }
 }
